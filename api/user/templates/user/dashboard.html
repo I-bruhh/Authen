@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <button id="logoutButton">Logout</button>
+
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            console.log("Logout button clicked"); // Debugging line
+
+            // Remove the JWT token from local storage
+            localStorage.removeItem('access_token');
+
+            // Redirect to the login page
+            window.location.href = '/api/user/login';
+        });
+    </script>
+</body>
+</html>
